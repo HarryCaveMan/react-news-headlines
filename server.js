@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const exphbs = require("express-handlebars");
 const PORT = process.env.PORT || 3001;
 // Initialize Express
 var app = express();
