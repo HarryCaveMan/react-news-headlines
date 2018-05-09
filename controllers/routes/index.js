@@ -1,7 +1,7 @@
 //router for api
 const api = require('./api');
 const path = require('path');
-const router = require('express').router();
+const router = require('express').Router();
 
 //export routers to main
 	router.use('/api', api.open);
