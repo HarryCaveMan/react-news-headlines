@@ -1,18 +1,18 @@
 {
   "name": "code-with-us",
   "version": "1.0.0",
-  "description": "code wih us is a Forum/Chat service for new coders and experienced programmers alike",
+  "description": "scrape and save articles from /r/worldnews",
   "main": "server.js",
   "scripts": {
     "server": "node server",
     "client": "node scripts/start-client",
     "start": "concurrently \"yarn server\"  \"yarn client\"",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build",
     "test": "echo\"Error: no test specified\" && exit 1",
     "seed": "node seedDB.js"
   },
-  "repository": "git@github.com:zachha/Code-With-Us.git",
-  "author": "Zach Harmon <zachha@gmail.com>, Richard Paez <Richardp809@gmail.com>, Erick Grissom <grissomerick@gmail.com>, Harris Joseph <harris.joseph.088@gmail.com>",
+  "repository": "git@github.com:harrycaveman/react-news-headlines.git",
+  "author": "Harris Joseph <harris.joseph.088@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^3.5.1",
@@ -30,15 +30,10 @@
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.0.17",
     "morgan": "^1.9.0",
-    "mysql": "^2.15.0",
-    "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "pg": "^7.4.1",
-    "sequelize": "^4.37.6",
-    "sequelize-cli": "^4.0.0",
-    "socket.io": "^2.1.0"
+    "pg": "^7.4.1"
   }
 }
