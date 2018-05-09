@@ -15,10 +15,10 @@
   "author": "Harris Joseph <harris.joseph.088@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^3.5.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "concurrently": "^3.5.1",
     "@material-ui/icons": "^1.0.0-beta.43",
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
