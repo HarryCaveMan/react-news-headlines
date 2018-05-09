@@ -15,6 +15,9 @@ mongoose.connect("mongodb://Harris:M4sterB4ws@ds061198.mlab.com:61198/heroku_j5p
 app.use(logger("dev"));
 // Use body-parser for handling form submissions
 app.use(bodyParser.json());
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 // Use express.static to serve the public folder as a static directory
 app.use(routes);
 
