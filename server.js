@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 3001;
+const routes = require('./controllers/routes');
+const PORT = process.env.PORT || 8080;
 // Initialize Express
 var app = express();
 
@@ -15,6 +16,6 @@ app.use(logger("dev"));
 // Use body-parser for handling form submissions
 app.use(bodyParser.json());
 // Use express.static to serve the public folder as a static directory
-require('./controllers/routes')(app);
+app.use(routes);
 
 app.listen(PORT, () => console.log('listening on: '+PORT));

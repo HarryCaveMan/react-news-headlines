@@ -2,7 +2,7 @@
   "name": "code-with-us-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:8080/",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.46",
     "@fortawesome/fontawesome": "^1.1.5",

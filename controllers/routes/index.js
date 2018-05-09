@@ -1,12 +1,12 @@
 //router for api
 const api = require('./api');
 const path = require('path');
+const router = require('react').router();
 
 //export routers to main
-module.exports = (app) =>{
-	app.use('/api', api.open);
-	app.use('/api/usr', api.user);
-	app.use('/',(req, res) =>
+	router.use('/api', api.open);
+	router.use('/api/usr', api.user);
+	router.use((req, res) =>
 	    res.sendFile(
 			path.join(
 				__dirname, 
@@ -14,4 +14,4 @@ module.exports = (app) =>{
 			)
 		)
 	);
-}
+module.exports = router;
