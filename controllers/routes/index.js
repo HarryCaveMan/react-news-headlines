@@ -10,7 +10,7 @@ const router = require('express').Router();
 	    res.sendFile(
 			path.join(
 				__dirname, 
-				'../../client/build/index.html'
+				'../../client/public/index.html'
 			)
 		)
 	);
