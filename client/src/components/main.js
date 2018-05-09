@@ -7,9 +7,9 @@ export default class Main extends Component {
     render(){
         return (
             <div className="content-main">
-                <Switch>
-                    <Route exact path="/" render={() => <Home />}/>
-                </Switch>
+                
+                    <Home />
+    
             </div>
         )
     }
