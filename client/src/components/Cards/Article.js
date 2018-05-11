@@ -14,10 +14,11 @@ class Article extends React.Component {
 
     commentCallback = event => {
         event.preventDefault();
+        console.log(event.target.id,"1")
         this.props.commentCallback(event.target.id);
     }
 
-    dateFormat = (date) =>{
+    dateFormat = date =>{
        let thing = new Date(parseInt(date.toString().substring(0,8),16)*1000);
        return `${thing.getMonth()+1}/${thing.getDay()}/${thing.getFullYear()}`
     }

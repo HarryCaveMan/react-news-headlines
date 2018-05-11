@@ -11,18 +11,24 @@ import Comment from '../Cards/Comment';
 import Reply from '../Article/reply';
 import { getArticleWithComments } from '../../utils/API/dbAPI';
 
+const commentFeedStyle = {
+  padding:0
+}
+
 class UserBox extends React.Component {
 
     state = {
-        comments:[]
+        comments:[],
+        articleId:null
     };
 
-    componentWillReceiveProps () {
-        this.loadComments();
+    componentWillReceiveProps (newProps) {
+        this.loadComments(newProps.articleId); 
+        this.setState({articleId: newProps.articleId})      
     }
 
-    loadComments = () => {
-        getArticleWithComments(this.props.articleId)
+    loadComments = (articleId) => {
+        getArticleWithComments(articleId)
         .then(res => this.setState(res.data))
     }
 
@@ -30,9 +36,11 @@ class UserBox extends React.Component {
         <div className="user-box">
         <AppBar position="static" >
             <Typography className="ubox-header" variant="title">{this.state.title?
-             this.state.title.substring(0,40)||this.state.title : `Hello, ${this.props.user.username}`}</Typography>
+             this.state.title.substring(0,38)+"..."||this.state.title : 
+             `Hello, ${this.props.user.username}`}</Typography>
             </AppBar>
-        <Paper elevation={3} className="user-paper">
+        <Paper elevation={3} className="user-paper"
+        style={commentFeedStyle}>
             {this.state.comments.length > 0 && this.state.comments.map(comment => Comment(comment))}
         </Paper>
         {this.props.articleId && <ExpansionPanel>

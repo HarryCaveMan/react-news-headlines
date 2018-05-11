@@ -12,7 +12,7 @@ export default class Home extends Component {
     }
 
     loadComments = articleId =>{
-        this.setState({articleId:articleId})
+            this.setState({articleId:articleId})
     }
     render(){
 

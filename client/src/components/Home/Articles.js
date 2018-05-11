@@ -37,7 +37,6 @@ class Articles extends React.Component {
           }else{
               this.loadArticles();
               this.setState({newView:"new"});
-              this.props.commentCallback(null);
           }
     }
 

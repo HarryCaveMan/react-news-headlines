@@ -3,9 +3,14 @@ import Avatar from "material-ui/Avatar";
 import Card, {CardHeader,CardContent} from "material-ui/Card";
 import Typography from 'material-ui/Typography';
 
+const commentStyle = {    
+    marginLeft:0,
+    marginRight:0,
+    width:"100%"
+}
 
 const Comment = comment => (
-    <Card>
+    <Card style={commentStyle}>
         <CardHeader
             avatar={
             <Avatar aria-label={comment.author}>
