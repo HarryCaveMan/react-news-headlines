@@ -48,8 +48,8 @@ class UserBox extends React.Component {
         expandIcon={<ExpandMoreIcon />}> 
           <Typography>Reply</Typography>                       
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>    
-          <Reply style={commentFeedStyle} user={this.props.user} articleId={this.props.articleId}/>
+        <ExpansionPanelDetails style={commentFeedStyle}>    
+          <Reply  user={this.props.user} articleId={this.props.articleId}/>
         </ExpansionPanelDetails>
       </ExpansionPanel>}
      </div>
