@@ -5,9 +5,6 @@ import Articles from './Articles';
 class HomeFeed extends React.Component{
     state = {
         user:this.props.user
-    }    
-    componentDidMount () {
-        console.log(this.props);
     }
     
     render (){return(

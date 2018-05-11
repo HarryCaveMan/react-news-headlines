@@ -22,8 +22,9 @@ class Reply extends React.Component {
     }
 
     formSubmit = event => {
-        createComment(this.props.articleId,this.state);
-        console.log(this.state,"Post")
+        event.preventDefault()
+        createComment(this.props.articleId,this.state)
+        .then(() => this.props.submitCallback(this.props.articleId));
     }
     
     render () {return(

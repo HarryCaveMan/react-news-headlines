@@ -12,7 +12,8 @@ import Reply from '../Article/reply';
 import { getArticleWithComments } from '../../utils/API/dbAPI';
 
 const commentFeedStyle = {
-  padding:0
+  padding:0,
+  overflowY:"scroll"
 }
 
 class UserBox extends React.Component {
@@ -49,7 +50,7 @@ class UserBox extends React.Component {
           <Typography>Reply</Typography>                       
         </ExpansionPanelSummary>
         <ExpansionPanelDetails style={commentFeedStyle}>    
-          <Reply  user={this.props.user} articleId={this.props.articleId}/>
+          <Reply  user={this.props.user} articleId={this.props.articleId} submitCallback={this.loadComments}/>
         </ExpansionPanelDetails>
       </ExpansionPanel>}
      </div>

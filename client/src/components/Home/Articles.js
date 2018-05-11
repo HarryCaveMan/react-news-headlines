@@ -13,7 +13,8 @@ class Articles extends React.Component {
         articles:[]
     }
 
-    componentdidMount() {
+    componentDidMount() {
+        console.log(this.state,this.props);
         this.state.newView ==="new"?
         this.loadArticles():
         this.loadSavedArticles();
@@ -26,7 +27,8 @@ class Articles extends React.Component {
    
     loadArticles = () =>
         scrape()  
-        .then(res => this.setState(res.data));
+        .then(res => res.data)
+        .then(res => this.setState(res));
 
     viewChange = (event,value) =>{
         event.preventDefault();

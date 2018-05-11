@@ -15,10 +15,18 @@ router.get("/scrape", (req,res) =>
           article.link = element.attribs.href;
           result.push(article);
         });
+        db.Article.find()
+          .then(articles => {res.json({
+            articles:
+               result.filter(res => 
+                  articles.map(article => 
+                    article.link)
+                  .indexOf(res.link)<0)});
+          });
         
-        res.json({articles:result});
+        //res.json({articles:result});
     })
-    .catch(err => res.status(500).json(err))
+    .catch(err => {console.log(err);res.status(500).json(err);})
 );
 // Route for grabbing a specific Article by id, populate it with it's comment 
 /*
