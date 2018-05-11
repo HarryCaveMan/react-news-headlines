@@ -49,7 +49,7 @@ class UserBox extends React.Component {
           <Typography>Reply</Typography>                       
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>    
-          <Reply user={this.props.user} articleId={this.props.articleId}/>
+          <Reply style={commentFeedStyle} user={this.props.user} articleId={this.props.articleId}/>
         </ExpansionPanelDetails>
       </ExpansionPanel>}
      </div>
