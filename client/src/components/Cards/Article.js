@@ -38,7 +38,7 @@ class Article extends React.Component {
               </Button> }
                 subheader={this.props.article.comments ? `${this.props.article.comments.length} comments`: "No Comments"}
             />
-            <Link to={`/article/${this.props.article.link}`} target="_blank">
+            <Link to={this.props.article.link} target="_blank">
               <CardContent>        
               <Typography variant="display1">{this.props.article.title}</Typography>
               </CardContent>
