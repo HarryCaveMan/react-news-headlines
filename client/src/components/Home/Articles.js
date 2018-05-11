@@ -37,14 +37,15 @@ class Articles extends React.Component {
             this.loadSavedArticles();
                     this.setState({newView:"saved"})
           }else{
-              this.loadArticles();
               this.setState({newView:"new"});
+              this.loadArticles();
           }
     }
 
     handleSave = (article) => {
         console.log({id:this.state.userId,...article});
         createArticle({id:this.state.userId,...article});
+        this.loadArticles();
     }
 
     render () {return (

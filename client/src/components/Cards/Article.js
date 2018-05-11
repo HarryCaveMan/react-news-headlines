@@ -14,7 +14,6 @@ class Article extends React.Component {
 
     commentCallback = event => {
         event.preventDefault();
-        console.log(event.target.id,"1")
         this.props.commentCallback(event.target.id);
     }
 

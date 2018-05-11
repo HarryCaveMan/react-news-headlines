@@ -67,9 +67,10 @@ a {
 }
 
 .user-box {
+  position:fixed;
+  right:25px;
   width:30%;
-  min-height:200px; /* for testing */
-  max-height:400px;
+  height:500px; /* for testing */
 }
 
 .ubox-header{
