@@ -27,8 +27,7 @@ class Articles extends React.Component {
    
     loadArticles = () =>
         scrape()  
-        .then(res => {this.setState(res.data);console.log(res.data);})
-        .then(console.log(this.state));
+        .then(res => {this.setState(res.data);console.log(res.data);});
 
     viewChange = (event,value) =>{
         event.preventDefault();

@@ -4,9 +4,11 @@ import axios from 'axios';
 
 //scrapes articles from Reddit
 export async function scrape () {
-   let out = await axios.get('/api/scrape');
-   console.log(out.data.articles);
-   return out;
+    let out =  await axios.get('/api/scrape');
+    if(out.data.articles.length===0){
+        return await scrape();
+    }
+    else return out;
 }
 
 // USERS //
