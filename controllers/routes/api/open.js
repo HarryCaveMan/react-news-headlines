@@ -15,6 +15,7 @@ router.get("/scrape", (req,res) =>
           article.link = element.attribs.href;
           result.push(article);
         });
+        console.log(response.data);
         db.Article.find()
           .then(articles => {res.json({
             articles:

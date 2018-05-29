@@ -3,8 +3,10 @@ import axios from 'axios';
 // SCRAPER //
 
 //scrapes articles from Reddit
-export function scrape () {
-   return axios.get('/api/scrape');
+export async function scrape () {
+   let out = await axios.get('/api/scrape');
+   console.log(out.data.articles);
+   return out;
 }
 
 // USERS //

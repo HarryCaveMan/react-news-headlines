@@ -68,8 +68,9 @@ a {
 
 .user-box {
   position:fixed;
+  top:100px;
   right:25px;
-  width:30%;
+  width:35%;
   height:500px; /* for testing */
 }
 
@@ -94,8 +95,13 @@ a {
   .content-main {
     flex-wrap: wrap;
   }
+  .left-feed{
+    max-height:400px;
+    overflow-x:scroll;
+  }
   
   .user-box, .left-feed {
+    position:static;
     width: 100%;
     margin-bottom: 30px;
   }

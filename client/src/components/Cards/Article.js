@@ -18,8 +18,8 @@ class Article extends React.Component {
     }
 
     dateFormat = date =>{
-       let thing = new Date(parseInt(date.toString().substring(0,8),16)*1000);
-       return `${thing.getMonth()+1}/${thing.getDay()}/${thing.getFullYear()}`
+       let dat = new Date(parseInt(date.toString().substring(0,8),16)*1000);
+       return `${dat.getMonth()+1}/${dat.getDay()}/${dat.getFullYear()}`
     }
 
     render () {return(

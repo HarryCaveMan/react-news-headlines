@@ -8,14 +8,14 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 class Articles extends React.Component {
 
     state = {
-        newView:"new",
+        view:"new",
         userId:this.props.userId,
         articles:[]
     }
 
-    componentDidMount() {
-        console.log(this.state,this.props);
-        this.state.newView ==="new"?
+    componentDidMount () {
+        //console.log(this.state,this.props);
+        this.state.view ==="new"?
         this.loadArticles():
         this.loadSavedArticles();
     }
@@ -27,17 +27,17 @@ class Articles extends React.Component {
    
     loadArticles = () =>
         scrape()  
-        .then(res => res.data)
-        .then(res => this.setState(res));
+        .then(res => {this.setState(res.data);console.log(res.data);})
+        .then(console.log(this.state));
 
     viewChange = (event,value) =>{
         event.preventDefault();
         console.log(value);
         if(value ==="saved"){
             this.loadSavedArticles();
-                    this.setState({newView:"saved"})
+                    this.setState({view:"saved"})
           }else{
-              this.setState({newView:"new"});
+              this.setState({view:"new"});
               this.loadArticles();
           }
     }
@@ -52,7 +52,7 @@ class Articles extends React.Component {
        
         <Paper elevation={3} className="left-feed">
              <AppBar position="static">
-                <Tabs value={this.state.newView} onChange={this.viewChange}>
+                <Tabs value={this.state.view} onChange={this.viewChange}>
                     <Tab value="new" label="New Articles" />
                     <Tab value="saved" label="Saved Articles" href="saved"/>
                 </Tabs>
